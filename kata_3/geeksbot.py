@@ -14,7 +14,7 @@ def main():
     updater.dispatcher.add_handler(CommandHandler('suma', suma))
 
     # Empezamos a pedir notificaciones a Telegram
-    update.start_polling()
+    updater.start_polling()
 
     # Capturamos señales de parada
     updater.idle()
@@ -28,6 +28,6 @@ def repite(update, context):
 def suma(update, context):
     # args = [a, b]
     resultado = str(int(context.args[0]) + int(context.args[1]))
-    update.message.reply_text('El resultado es ' + resultado)
+    update.message.reply_text('El resultado es ' + resultado + '.')
 
 main()
